@@ -3,17 +3,19 @@
 ###### tags: `Linux`
 
 ## history command 
-To Show up the Command you have been typed
+`history` To Show up the Command you have been typed
 ```bash=
-1986  javac Checkpoint.java
-1987  java Checkpoint
-1988  ls
-1989  ls -l
-1990  cd Desktop
-1991  vim test.cpp
+History_id  Command You have been entered
+1986        javac Checkpoint.java
+1987        java Checkpoint
+1988        ls
+1989        ls -l
+1990        cd Desktop
+1991        vim test.cpp
 ```
+
+using `!History_id` to execute the command
 ```bash=
-using `!` to execute the command
 $!1990
 # !1990 woukd execute : $cd Desktop
 ```
@@ -25,17 +27,14 @@ with `ctrl + r`
 ```
 
 
-with -c 
-> clear the history
-with `| more`
-> displaying page-like
+with `history -c` clear the history
+with `| more` displaying page-like
 
-### ENV GLOBAL VARIABLE for command `history`
+### ENV GLOBAL VARIABLE of Linux Script for command `history` 
 
-`HISTTIMEFORMAT` FORMAT for showing the informations 
+`HISTTIMEFORMAT` FORMATS the showing the informations 
 ```bash=
-# Do remember with whilespace 
-#     in front of " at the tail
+# Do remember add whilespace in front of " at the end
 HISTTIMEFORMAT="%y-%m-%d_%H:%M:%S "
 ```
 
@@ -52,8 +51,7 @@ HISTSIZE = 2000
 
 Save the command if 
 ```bash=
-#It wont record the command
-# when command is starting with whitespace
+# Wont record the command when command is starting with whitespace
 # such as $ ls -al
 HISTCONTROL=ignorespace
 ```
@@ -63,7 +61,7 @@ No duplicate Command
 HISTCONTROL=ignoredups
 ```
 
-Do the Both opetions
+Add options
 ```bash=
 # ignorespace + ignoredups
 HISTCONTROL=ignoreboth

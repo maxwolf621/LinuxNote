@@ -2,6 +2,7 @@
 
 [TOC]
 
+[basic shell script](https://blog.techbridge.cc/2019/11/15/linux-shell-script-tutorial/)
 
 ###### tags: `Linux`
 

@@ -1,6 +1,6 @@
 [grep](https://blog.gtwang.org/linux/linux-grep-command-tutorial-examples/)
 
-grep : 搜尋關鍵字 d
+grep : 搜尋關鍵字 
 
 ## Search keyword in the file contents
 

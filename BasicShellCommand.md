@@ -46,47 +46,33 @@ mount point : directory for external device (e.g. USB, driver...)
 > : Contains file system mounting information and we can edit this file to mount file system permanently and delete mount points.
 
 
-Knowing these makes you run Archlinux easily!!
-> /
-> : root of virtual dirctory 
-
-> <font color=gold>/etc 
-> : ETC is a folder which contain all your system configuration files in it. Then why the etc name?</font>
-
->/home
-> : place for the users (e.g. jian, zhang, Domi …)
-
-
-> /mnt 
-> : for external device
-
-> /opt 
-> Third parts packages
-
-> /proc 
-> : process information
-
-> /run
-> : system information data when system is on runing 
-
-
-> /tmp
->  : temporary files
-
-> /usr
-> : contains by far the largest share of data on a system. Hence, this is one of the most important directories in the system as it contains all the user binaries, their documentation, libraries, header files, etc
->><font color=gold>/lib 
->>: **contains all helpful library files used by the system
->> such as the commands we used **</font>
-
+- /
+    > : root of virtual dirctory 
+- /etc 
+    > : /etc is a folder which contain all your system configuration files in it.
+- /home
+    > : place for the users (e.g. jian, zhang, Domi …)
+- /mnt 
+    > : for external device
+- /opt 
+    > Third parts packages
+- /proc 
+    > : process information
+- /run
+    > : system information data when system is on runing 
+- /tmp
+    >  : temporary files
+- /usr
+    > : contains by far the largest share of data on a system. Hence, this is one of the most important directories in the system as it contains all the userbinaries, their documentation, libraries, header files, etc
+- /lib 
+    >: **contains all helpful library files used by the system e.g, the commands we used **
 
 
 ### ls 
-
 - with `-F` 
     > to list directory and files clearly often with `-d` (list directory only)
     ```bash
-    pi@JianMayer:~ $ ls -F
+    pi@ji:~ $ ls -F
      backup.php*          Downloads/    MagPi/       Pictures/    test/
     '#blockchian.org#~'   file/         mu_code/     Public/      text.txt~
      blockchian.org~      get-pip.py    Music/       s.py~        Videos/
@@ -94,18 +80,12 @@ Knowing these makes you run Archlinux easily!!
      Desktop/             home.html~    noip/        termp/
     ```
     - `/` means it's directory not a file 
-
 - with `-a`
     > to show up the hidden file
-
 - with `-R`
     > recursively to show up files and directory until no other directories exists
-
-
 - with `-l`
-    >to list each files **INFORMATION** 
-    >
-    > such as .. `421` ..etc ..
+    >to list each files **INFORMATION** of user, group such as .. `421` ..etc ..
 
 
 ## File Globbing
@@ -123,8 +103,6 @@ $ ls -l f[a-i]ll
 #list all the files name except fall 
 $ls -l f[!a]ll 
 ```
-
-
 
 ### `touch` 
 To create a file
@@ -154,6 +132,7 @@ $cp *script dirctory/
 ### linking the file with `ln -s`
 file1 ---> file2
 
+#### soft link
 ```bash
 #two different file link together
 $ls -l data_file 
@@ -161,29 +140,32 @@ $ls -l data_file
 $ 
 $ln -s data_file sl_data_file
 $ 
-$ls -l *data_file -rw-rw-r-- 1 christine christine 1092 May 21 17:27 data_file
+$ls -l *data_file 
+-rw-rw-r-- 1 christine christine 1092 May 21 17:27 data_file
 lrwxrwxrwx 1 christine christine 9 May 21 17:29 sl_data_file -> data_file $ 
 ```
+- everyone can access sl_data_file
 
-using `-i` to check identifier of the file (inode)
+using `ls -i` to check identifier of the file (inode)
 ```bash
 1234 data_file 1235 sl_data_file
 ```
 
-### hard link
-> Concept 
-> : Just like Reference in Cpp
+#### hard link
+> Concept : Just like Reference in Cpp
 
 Say File1 -> Virtual FileX then
 > FileX has the content of File1
 
 For example : 
 ```bash
-ln code_file hl_code_file
+$ln code_file hl_code_file
 # now code_file and hl_code_file would have the same inode
+$ls -i *code_file
+410765 code_file  410765 hl_code_file
 ```
 :::info
-A suggestion  : Do Not use soft-link  Why?
+A suggestion  : Do Not use soft-link
 :::
 
 ## `mv` Source Dstination

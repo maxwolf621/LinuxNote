@@ -88,8 +88,8 @@ Thu Feb 10 17:56:58 EDT 2014
 #### using `>>` to avoid **overwriting(überschriben)**
 
 ```console
-pi@Ji:~ $who >> test6
-pi@Ji:~ $cat test6
+pi@Ji:~ $ who >> test6
+pi@Ji:~ $ cat test6
 Thu Feb 10 18:02:14 EDT 2014 #this is date > test6
 user pts/0 Feb 10 17:55      #this is who >> test6
 ```

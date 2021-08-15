@@ -188,9 +188,9 @@ command `expr --help`
 ### ERROR of `*` 
 To handle such problem add `\` bfore `*`
 ```console
-pi@mayer:~ $expr 5 * 2
+pi@mayer:~ $ expr 5 * 2
 expr: syntax error: unexpected argument \u201e0_rUDkeFO-5GS-t5Vb.png\u201c
-pi@mayer:~ $expr 5 \* 2
+pi@mayer:~ $ expr 5 \* 2
 10
 ```
 
